@@ -1,77 +1,77 @@
-# Old Mac Desktop Demo
+# Old Mac デスクトップデモ
 
-A nostalgic recreation of the classic Macintosh System 7 desktop interface using pure HTML, CSS, and JavaScript.
+純粋なHTML、CSS、JavaScriptを使用したクラシックなMacintosh System 7デスクトップインターフェースのノスタルジックな再現。
 
-## Features
+## 機能
 
-- **Classic UI Design**: Authentic System 7 aesthetic with pixel-perfect styling
-- **Interactive Menu Bar**: Functional File, Edit, View, and Special menus with real-time clock
-- **Desktop Icons**: Double-click to open applications
-  - Macintosh HD (Finder)
-  - Trash
-  - System Folder
-  - SimpleText (Text Editor)
-  - Bomb Simulator (Classic Mac error screen)
-  - Dogcow Game (Interactive Clarus the Dogcow)
-  - After Dark (Flying Toasters screensaver)
-- **Window Management**: 
-  - Draggable windows
-  - Resizable windows
-  - Maximize/restore functionality
-  - Multiple window support with proper z-index management
-- **Drag & Drop**: Move desktop icons around the screen
-- **System Functions**: Restart and Shut Down options in Special menu
+- **クラシックUIデザイン**: ピクセルパーフェクトなスタイリングによる本格的なSystem 7の美学
+- **インタラクティブメニューバー**: リアルタイムクロック付きの機能的なファイル、編集、表示、特別メニュー
+- **デスクトップアイコン**: ダブルクリックでアプリケーションを開く
+  - Macintosh HD (ファインダー)
+  - ゴミ箱
+  - システムフォルダ
+  - SimpleText (テキストエディタ)
+  - 爆弾シミュレーター (クラシックMacエラー画面)
+  - Dogcowゲーム (インタラクティブなClarus the Dogcow)
+  - After Dark (フライングトースタースクリーンセーバー)
+- **ウィンドウ管理**: 
+  - ドラッグ可能なウィンドウ
+  - サイズ変更可能なウィンドウ
+  - 最大化/復元機能
+  - 適切なz-index管理による複数ウィンドウのサポート
+- **ドラッグ＆ドロップ**: デスクトップアイコンを画面上で移動
+- **システム機能**: 特別メニューの再起動とシステム終了オプション
 
-## Fun Applications
+## 楽しいアプリケーション
 
-### 💣 Bomb Simulator
-Experience the iconic Mac system bomb error screen with authentic shaking animation and error messages. Features "Restart" and "Resume" buttons for the full nostalgic experience.
+### 💣 爆弾シミュレーター
+本格的な振動アニメーションとエラーメッセージを備えた象徴的なMacシステムの爆弾エラー画面を体験。完全なノスタルジック体験のための「再起動」と「再開」ボタンを搭載。
 
-### 🐄 Dogcow Game
-Play with Clarus the Dogcow, Apple's hidden mascot! Click anywhere to make Clarus "Moof!" and jump. Score points and unlock celebrations at 100 points. The dogcow walks back and forth automatically.
+### 🐄 Dogcowゲーム
+Appleの隠れたマスコット、Clarus the Dogcowと遊ぼう！どこでもクリックしてClarusに「Moof!」と鳴かせてジャンプさせよう。ポイントを獲得して100ポイントでお祝いをアンロック。Dogcowは自動的に前後に歩きます。
 
-### 🌃 After Dark Screensaver
-Enjoy the legendary Flying Toasters screensaver from After Dark. Features flying toast, twinkling stars, and click interactions. Multiple windows can be opened without conflicts.
+### 🌃 After Darkスクリーンセーバー
+After Darkの伝説的なフライングトースタースクリーンセーバーを楽しもう。飛ぶトースト、きらめく星、クリックインタラクションを搭載。競合なしに複数のウィンドウを開くことができます。
 
-## Usage
+## 使用方法
 
-Simply open `index.html` in any modern web browser to experience the classic Mac desktop.
+任意のモダンなウェブブラウザで`index.html`を開くだけで、クラシックなMacデスクトップを体験できます。
 
 ```bash
-# Clone the repository
+# リポジトリをクローン
 git clone [repository-url]
 
-# Navigate to the directory
+# ディレクトリに移動
 cd old-mac
 
-# Open in browser
+# ブラウザで開く
 open index.html  # macOS
-# or
+# または
 xdg-open index.html  # Linux
-# or just double-click the file in your file manager
+# またはファイルマネージャーでファイルをダブルクリック
 ```
 
-## Interactions
+## 操作方法
 
-- **Double-click** desktop icons to open applications
-- **Click and drag** window title bars to move windows
-- **Drag** the resize handle (bottom-right corner) to resize windows
-- **Click** menu items to reveal dropdown menus
-- **Drag** desktop icons to reposition them
+- デスクトップアイコンを**ダブルクリック**してアプリケーションを開く
+- ウィンドウのタイトルバーを**クリック＆ドラッグ**してウィンドウを移動
+- リサイズハンドル（右下隅）を**ドラッグ**してウィンドウのサイズを変更
+- メニュー項目を**クリック**してドロップダウンメニューを表示
+- デスクトップアイコンを**ドラッグ**して位置を変更
 
-## Technologies
+## 技術
 
-- Pure HTML5
-- CSS3 (with classic Mac styling)
-- Vanilla JavaScript (no frameworks required)
+- 純粋なHTML5
+- CSS3（クラシックMacスタイリング付き）
+- バニラJavaScript（フレームワーク不要）
 
-## Browser Compatibility
+## ブラウザ互換性
 
-Works on all modern browsers including:
+以下を含むすべてのモダンブラウザで動作：
 - Chrome/Edge (Chromium)
 - Firefox
 - Safari
 
-## License
+## ライセンス
 
-This is a demonstration project for educational purposes.
+これは教育目的のデモンストレーションプロジェクトです。
