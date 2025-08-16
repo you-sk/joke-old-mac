@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Mac OS Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="desktop">
+        <div id="menubar">
+            <div class="menu-item apple-menu">🍎</div>
+            <div class="menu-item" data-menu="file">File</div>
+            <div class="menu-item" data-menu="edit">Edit</div>
+            <div class="menu-item" data-menu="view">View</div>
+            <div class="menu-item" data-menu="special">Special</div>
+            <div class="clock"></div>
+        </div>
+
+        <div id="desktop-icons">
+            <div class="desktop-icon" data-app="finder">
+                <div class="icon-image">💾</div>
+                <div class="icon-label">Macintosh HD</div>
+            </div>
+            <div class="desktop-icon" data-app="trash">
+                <div class="icon-image">🗑️</div>
+                <div class="icon-label">Trash</div>
+            </div>
+            <div class="desktop-icon" data-app="system">
+                <div class="icon-image">⚙️</div>
+                <div class="icon-label">System Folder</div>
+            </div>
+            <div class="desktop-icon" data-app="notepad">
+                <div class="icon-image">📝</div>
+                <div class="icon-label">SimpleText</div>
+            </div>
+        </div>
+
+        <div id="windows-container"></div>
+
+        <div class="dropdown-menu" id="file-menu">
+            <div class="menu-option">New Folder</div>
+            <div class="menu-option">Open</div>
+            <div class="menu-option">Print</div>
+            <div class="menu-separator"></div>
+            <div class="menu-option">Close Window</div>
+        </div>
+
+        <div class="dropdown-menu" id="edit-menu">
+            <div class="menu-option">Undo</div>
+            <div class="menu-separator"></div>
+            <div class="menu-option">Cut</div>
+            <div class="menu-option">Copy</div>
+            <div class="menu-option">Paste</div>
+            <div class="menu-option">Clear</div>
+            <div class="menu-separator"></div>
+            <div class="menu-option">Select All</div>
+        </div>
+
+        <div class="dropdown-menu" id="view-menu">
+            <div class="menu-option">by Icon</div>
+            <div class="menu-option">by Name</div>
+            <div class="menu-option">by Date</div>
+            <div class="menu-option">by Size</div>
+        </div>
+
+        <div class="dropdown-menu" id="special-menu">
+            <div class="menu-option">Clean Up</div>
+            <div class="menu-option">Empty Trash</div>
+            <div class="menu-separator"></div>
+            <div class="menu-option">Eject</div>
+            <div class="menu-option">Restart</div>
+            <div class="menu-option">Shut Down</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
