@@ -148,6 +148,43 @@ function openApplication(appType) {
             title = 'SimpleText';
             content = '<textarea class="notepad-content" placeholder="Welcome to SimpleText!\n\nType your text here..."></textarea>';
             break;
+        case 'bomb':
+            title = 'System Error';
+            content = `
+                <div class="bomb-display">💣</div>
+                <div class="bomb-message">
+                    Sorry, a system error occurred.<br><br>
+                    <strong>Unimplemented trap</strong><br><br>
+                    To temporarily turn off extensions, restart and hold down the Shift key.
+                    <div class="error-code">ID = 02 Address = F0000000</div>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="button" onclick="location.reload()">Restart</button>
+                    <button class="button" onclick="this.closest('.window').remove()">Resume</button>
+                </div>
+            `;
+            break;
+        case 'dogcow':
+            title = 'Clarus the Dogcow';
+            content = `
+                <div class="dogcow-game" id="dogcow-game">
+                    <div class="game-score">Score: <span id="score">0</span></div>
+                    <div class="dogcow" id="dogcow">🐄</div>
+                </div>
+                <div style="text-align: center; padding: 10px;">
+                    Click anywhere to make Clarus moof!
+                </div>
+            `;
+            setTimeout(() => initDogcowGame(), 100);
+            break;
+        case 'screensaver':
+            title = 'After Dark - Flying Toasters';
+            content = `
+                <div class="screensaver-container" id="screensaver">
+                </div>
+            `;
+            setTimeout(() => initScreensaver(), 100);
+            break;
     }
     
     createWindow(title, content);
@@ -339,3 +376,119 @@ desktop.addEventListener('drop', (e) => {
         desktop.appendChild(draggedIcon);
     }
 });
+
+function initDogcowGame() {
+    const gameContainer = document.getElementById('dogcow-game');
+    const dogcow = document.getElementById('dogcow');
+    const scoreElement = document.getElementById('score');
+    
+    if (!gameContainer || !dogcow) return;
+    
+    let score = 0;
+    let position = 50;
+    let isMovingRight = true;
+    
+    const moveInterval = setInterval(() => {
+        if (!document.getElementById('dogcow-game')) {
+            clearInterval(moveInterval);
+            return;
+        }
+        
+        if (isMovingRight) {
+            position += 2;
+            if (position > gameContainer.offsetWidth - 60) {
+                isMovingRight = false;
+                dogcow.classList.add('flip');
+            }
+        } else {
+            position -= 2;
+            if (position < 20) {
+                isMovingRight = true;
+                dogcow.classList.remove('flip');
+            }
+        }
+        dogcow.style.left = position + 'px';
+    }, 50);
+    
+    gameContainer.addEventListener('click', (e) => {
+        const rect = gameContainer.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        dogcow.classList.add('jumping');
+        setTimeout(() => dogcow.classList.remove('jumping'), 500);
+        
+        const moof = document.createElement('div');
+        moof.className = 'moof-sound';
+        moof.textContent = 'Moof!';
+        moof.style.left = x + 'px';
+        moof.style.top = y + 'px';
+        gameContainer.appendChild(moof);
+        
+        setTimeout(() => moof.remove(), 1000);
+        
+        score += 10;
+        scoreElement.textContent = score;
+        
+        if (score >= 100) {
+            const celebration = document.createElement('div');
+            celebration.style.position = 'absolute';
+            celebration.style.top = '50%';
+            celebration.style.left = '50%';
+            celebration.style.transform = 'translate(-50%, -50%)';
+            celebration.style.fontSize = '48px';
+            celebration.textContent = '🎉';
+            gameContainer.appendChild(celebration);
+            setTimeout(() => celebration.remove(), 2000);
+        }
+    });
+}
+
+function initScreensaver() {
+    const containers = document.querySelectorAll('#screensaver');
+    const container = containers[containers.length - 1];
+    if (!container) return;
+    
+    for (let i = 0; i < 20; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 3 + 's';
+        container.appendChild(star);
+    }
+    
+    function createToaster() {
+        const toaster = document.createElement('div');
+        toaster.className = 'flying-toaster';
+        toaster.textContent = '🍞';
+        toaster.style.top = Math.random() * 80 + '%';
+        toaster.style.animationDuration = (8 + Math.random() * 4) + 's';
+        container.appendChild(toaster);
+        
+        toaster.addEventListener('animationend', () => {
+            toaster.remove();
+            if (container.parentElement) {
+                createToaster();
+            }
+        });
+    }
+    
+    for (let i = 0; i < 3; i++) {
+        setTimeout(() => createToaster(), i * 3000);
+    }
+    
+    container.addEventListener('click', () => {
+        const flash = document.createElement('div');
+        flash.style.position = 'absolute';
+        flash.style.top = '0';
+        flash.style.left = '0';
+        flash.style.width = '100%';
+        flash.style.height = '100%';
+        flash.style.background = 'white';
+        flash.style.opacity = '0.5';
+        container.appendChild(flash);
+        
+        setTimeout(() => flash.remove(), 100);
+    });
+}

@@ -11,6 +11,9 @@ A nostalgic recreation of the classic Macintosh System 7 desktop interface using
   - Trash
   - System Folder
   - SimpleText (Text Editor)
+  - Bomb Simulator (Classic Mac error screen)
+  - Dogcow Game (Interactive Clarus the Dogcow)
+  - After Dark (Flying Toasters screensaver)
 - **Window Management**: 
   - Draggable windows
   - Resizable windows
@@ -18,6 +21,17 @@ A nostalgic recreation of the classic Macintosh System 7 desktop interface using
   - Multiple window support with proper z-index management
 - **Drag & Drop**: Move desktop icons around the screen
 - **System Functions**: Restart and Shut Down options in Special menu
+
+## Fun Applications
+
+### 💣 Bomb Simulator
+Experience the iconic Mac system bomb error screen with authentic shaking animation and error messages. Features "Restart" and "Resume" buttons for the full nostalgic experience.
+
+### 🐄 Dogcow Game
+Play with Clarus the Dogcow, Apple's hidden mascot! Click anywhere to make Clarus "Moof!" and jump. Score points and unlock celebrations at 100 points. The dogcow walks back and forth automatically.
+
+### 🌃 After Dark Screensaver
+Enjoy the legendary Flying Toasters screensaver from After Dark. Features flying toast, twinkling stars, and click interactions. Multiple windows can be opened without conflicts.
 
 ## Usage
 
